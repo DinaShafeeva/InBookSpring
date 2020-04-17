@@ -1,37 +1,18 @@
 package ru.itis.inbook.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Table(name = "USER")
 public class User {
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getHashPassword() {
-        return hashPassword;
-    }
-
-    public Role getRole() {
-        return role;
-    }
 
     @Id
     @Column(name = "ID")
@@ -50,5 +31,11 @@ public class User {
     @Column
     @Enumerated(value = EnumType.STRING)
     private Role role;
+
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Book> bookList;
+
+    private String confirmCode;
 
 }
