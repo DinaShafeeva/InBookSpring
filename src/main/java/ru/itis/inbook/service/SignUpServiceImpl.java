@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import org.springframework.web.context.annotation.RequestScope;
 import ru.itis.inbook.dto.SignUpDto;
 import ru.itis.inbook.models.Role;
 import ru.itis.inbook.models.User;
@@ -19,6 +20,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
 @Component
+@RequestScope
 public class SignUpServiceImpl implements SignUpService {
 
     @Autowired
@@ -70,6 +72,11 @@ public class SignUpServiceImpl implements SignUpService {
 
             return true;
         } else return false;
+    }
+
+    @Override
+    public void signUpWithGoogle(String email) {
+
     }
 
     static boolean checkPassword(String password) {

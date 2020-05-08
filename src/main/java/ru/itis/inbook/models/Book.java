@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Book {
     @Id
     @Column(name = "ID_BOOk")
     @GeneratedValue
-    private Long idBook;
+    private int idBook;
 
     @Column(name = "NAME_OF_BOOK")
     private String nameOfBook;
@@ -28,10 +29,14 @@ public class Book {
     @Column(name = "AUTHOR")
     private String author;
 
-    @Column(name = "ID_GENRE")
-    private String idGenre;
+    @Column(name = "GENRE")
+    @Enumerated(value = EnumType.STRING)
+    private Genre genre;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<User> userList;
+
+    @OneToMany(mappedBy="book",fetch = FetchType.EAGER)
+    private List<Quote> quotes;
 
 }

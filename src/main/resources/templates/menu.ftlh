@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body style="background: antiquewhite">
-<div class="container " style="width=100%">
+<div style="width=100%">
+
     <header class="blog-header py-3" style="background: burlywood; width: 100%">
 
 
@@ -23,11 +24,17 @@
                 <h1 class="blog-header-logo text-dark" >InBook</h1>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center ">
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign out</a>
+                <#--<a class="btn btn-sm btn-outline-secondary">Sign out</a>-->
+                    <form class="form-signin "  action="/logout" method="post">
+
+                    <input class="btn btn-sm btn-outline-secondary"  type="submit" value="Sign out">
+                    </form>
+
             </div>
         </nav>
 
     </header>
+
 </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

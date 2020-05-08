@@ -12,7 +12,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findById(Long id);
     Optional<User> findByConfirmCode(String confirmCode);
     List<User> findAllByLoginContainsIgnoreCase(String login);
-
+    List<User> findAll();
 
 
 }

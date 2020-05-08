@@ -12,4 +12,8 @@ public interface UserService {
 
     UserDto findUser(Long id);
 
-}
+  //  void delete(UserDto userDto);
+
+    void filterByLogin(List<UserDto> userDtoList, String login);
+
+    }

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Data
 public class BookDto {
 
-    private Long idBook;
+    private int idBook;
     private String nameOfBook;
     private String author;
     private List<Book> bookList;

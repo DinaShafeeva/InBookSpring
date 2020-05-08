@@ -37,12 +37,8 @@
         <input name="email"  class="form-control mb-3" placeholder="Email" required autofocus>
         <label for="inputPassword" class="sr-only ">Password</label>
         <p><input type="password" name="password" class="form-control" placeholder="Password" required></p>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
         <p><input class="btn btn-lg btn-primary btn-block"  style="background: chocolate" type="submit" value="Sign in"></p>
+        <a class="mb-3" href="/signUp">Need to sign up?</a>
 
         <p class="mt-5 mb-3 text-muted">© 2020</p>
     </form>

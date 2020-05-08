@@ -32,9 +32,11 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
-
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Book> bookList;
+
+    @OneToMany(mappedBy="user")
+    private List<Quote> quotes;
 
     private String confirmCode;
 
