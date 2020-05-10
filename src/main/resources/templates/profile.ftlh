@@ -114,15 +114,7 @@
     <form action="/profile" method="post">
         <p><input class="btn btn-lg btn-primary btn-block"  style="background: chocolate" type="submit" value="Change profile"></p>
     </form>
-    <h4>Прочитано книг: </h4> $user.booksCount
-    <h4>Любимые жанры: </h4> $user.genres
-    <h4>Цитаты: </h4> $user.quotes
-    <h4>Книги: </h4>
-    <form action="/profile" method="get">
-        <input type="submit" onclick="ShowAllBooks()" value="Показать прочтенные книги">
-    </form>
-</div>
-</div>
+
 
 <script>
     var visible = false;

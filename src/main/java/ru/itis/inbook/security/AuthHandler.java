@@ -9,8 +9,10 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 import org.springframework.stereotype.Component;
 import ru.itis.inbook.service.SignUpService;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Component
 public class AuthHandler extends SimpleUrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -19,8 +21,9 @@ public class AuthHandler extends SimpleUrlAuthenticationSuccessHandler implement
     SignUpService signUpService;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest httpRequest, HttpServletResponse httpServletResponse, Authentication authentication){
+    public void onAuthenticationSuccess(HttpServletRequest httpRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         signUpService.signUpWithGoogle(((DefaultOidcUser)authentication.getPrincipal()).getEmail());
+        super.onAuthenticationSuccess(httpRequest, httpServletResponse, authentication);
     }
 
 }

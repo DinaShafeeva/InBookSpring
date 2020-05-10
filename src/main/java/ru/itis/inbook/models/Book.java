@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Proxy;
+import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 
 import javax.persistence.*;
 import java.util.List;
