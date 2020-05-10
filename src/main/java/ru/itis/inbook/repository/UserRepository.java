@@ -1,6 +1,11 @@
 package ru.itis.inbook.repository;
 
+import org.hibernate.annotations.SQLInsert;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import ru.itis.inbook.models.Book;
 import ru.itis.inbook.models.User;
 
 import java.util.List;
@@ -14,5 +19,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findAllByLoginContainsIgnoreCase(String login);
     List<User> findAll();
 
-
+//    @Modifying
+//    @ Query("update User u set u.email = ?1")
+//    void setUserInfoById(String email);
+//
+//    @ Modifying
+//    @ Query("update SomeEntity t set t.value = :value where t.id = :id")
+//    int updateBooksList("id" Long id, "value" List<Book> value);
 }

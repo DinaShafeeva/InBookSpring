@@ -18,13 +18,12 @@
             <div class="col-4 pt-1" style="width: 100%">
                 <a class="p-2 text-muted" href="/profile">Profile</a>
                 <a class="p-2 text-muted" href="/search">Find Book</a>
-                <a class="p-2 text-muted" href="#">Find Person</a>
+                <a class="p-2 text-muted" href="/chat">Chat</a>
             </div>
             <div class="col-4 text-center" >
                 <h1 class="blog-header-logo text-dark" >InBook</h1>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center ">
-                <#--<a class="btn btn-sm btn-outline-secondary">Sign out</a>-->
                     <form class="form-signin "  action="/logout" method="post">
 
                     <input class="btn btn-sm btn-outline-secondary"  type="submit" value="Sign out">

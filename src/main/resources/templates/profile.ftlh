@@ -19,13 +19,18 @@
 
     <div class="my-3 p-3 bg-white rounded shadow-sm">
         <h6 class="border-bottom border-gray pb-2 mb-0">Read books:</h6>
+    <#if (user.getBookList()?size > 0)>
         <div class="media text-muted pt-3">
             <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>
             <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+
                 <strong class="d-block text-gray-dark">${user.getBookList()[0].nameOfBook}</strong>
                 ${user.getBookList()[0].author}
+
             </p>
         </div>
+</#if>
+ <#if (user.getBookList()?size > 1)>
         <div class="media text-muted pt-3">
             <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>
             <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -33,6 +38,8 @@
             ${user.getBookList()[1].author}
             </p>
         </div>
+</#if>
+ <#if (user.getBookList()?size > 2)>
         <div class="media text-muted pt-3">
             <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>
             <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -40,9 +47,9 @@
             ${user.getBookList()[2].author}
             </p>
         </div>
+</#if>
 
-
-
+ <#if (user.getBookList()?size > 3)>
         <div id="div" style="display: none">
         <#list user.getBookList()[3 ..< user.getBookList()?size ] as item>
         <div class="media text-muted pt-3" id="booksDiv" >
@@ -54,6 +61,7 @@
         </div>
         </#list>
     </div>
+</#if>
         <small class="d-block text-right mt-3">
             <p><input type="submit" class="btn"  style="background: chocolate"
                       onclick="moreBooks()" value="More..."></p>

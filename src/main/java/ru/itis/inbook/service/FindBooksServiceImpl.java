@@ -18,7 +18,15 @@ public class FindBooksServiceImpl implements FindBooksService {
     @Override
     public List<Book> getBookList(List<Book> list) {
         List<Book> recommendedBooks = new ArrayList<>();
-
+        if (list.size()==0){
+            for (int i = 1; i < 11; i++) {
+                if (bookRepository.findByIdBook(i) != null) {
+                    if ((!checkBook(bookRepository.findByIdBook(i), list)) && (!checkBookInRecommended(bookRepository.findByIdBook(i), recommendedBooks))) {
+                        recommendedBooks.add(bookRepository.findByIdBook(i));
+                    }
+                }
+            }
+        }
         int[] genres = new int[24];
         for (int i : genres) {
             i = 0;
@@ -78,10 +86,10 @@ public class FindBooksServiceImpl implements FindBooksService {
 
             while (recommendedBooks.size()<10){
                 int max = getMax(genres);
-               if (max == -1) {
+               if (max == -1)  {
                    for (int i = 1; i < 11; i++) {
                        if (bookRepository.findByIdBook(i) != null) {
-                           if (!checkBook(bookRepository.findByIdBook(i), list)) {
+                           if ((!checkBook(bookRepository.findByIdBook(i), list)) && (!checkBookInRecommended(bookRepository.findByIdBook(i), recommendedBooks))) {
                                recommendedBooks.add(bookRepository.findByIdBook(i));
                            }
                        }
@@ -89,147 +97,147 @@ public class FindBooksServiceImpl implements FindBooksService {
                    return recommendedBooks;
                } else if (max == 0){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Adventure)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list)) && (!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }
                else if (max == 1){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Art)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list)) && (!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 2){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Contemporary)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 3){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Cooking)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 4){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Development)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 5){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Dystopian)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 6){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Guide)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 7){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.FamiliesRelationships)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 8){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Fantasy)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 9){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.ForChildren)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 10){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.HistoricalFiction)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 11){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Health)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 12){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.History)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 13){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Horror)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 14){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Humor)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 15){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Thriller)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 16){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Memoir)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 17){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Motivational)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 18){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Mystery)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 19){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Paranormal)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 20){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Personal)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 21){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Romance)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }else if (max == 22){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.ScienceFiction)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
                }
                else if (max == 23){
                    for (Book book :  bookRepository.findBooksByGenre(Genre.Travel)){
-                       if (!checkBook(book, list)){
+                       if ((!checkBook(book, list))&&(!checkBookInRecommended(book, recommendedBooks))){
                            recommendedBooks.add(book);
                        }
                    }
@@ -241,6 +249,13 @@ public class FindBooksServiceImpl implements FindBooksService {
     }
 
     private Boolean checkBook(Book book, List<Book> list) {
+        for (Book item : list) {
+            if (item.getIdBook() == book.getIdBook()) return true;
+        }
+        return false;
+    }
+
+    private Boolean checkBookInRecommended(Book book, List<Book> list) {
         for (Book item : list) {
             if (item.getIdBook() == book.getIdBook()) return true;
         }

@@ -7,14 +7,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import ru.itis.inbook.repository.BookRepository;
+import ru.itis.inbook.repository.UserRepository;
 import ru.itis.inbook.security.UserDetailsImpl;
 import ru.itis.inbook.service.FindBooksService;
+
 
 @Controller
 public class SearchController {
 
     @Autowired
     FindBooksService findBooksService;
+
+    @Autowired
+    BookRepository bookRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping("/search")
     public String getSearchPage(Authentication authentication, Model model) {
@@ -27,10 +36,10 @@ public class SearchController {
     public String search(Authentication authentication, @RequestParam("book_id")String idBook
     ) {
         UserDetailsImpl userDetails = (UserDetailsImpl)authentication.getPrincipal();
-        Long idUser = userDetails.getUser().getId();
 
+        userDetails.getUser().getBookList().add(bookRepository.findByIdBook(Integer.parseInt(idBook)));
 
-
+        userRepository.save(userDetails.getUser());
         return "redirect:/search";
     }
 }
