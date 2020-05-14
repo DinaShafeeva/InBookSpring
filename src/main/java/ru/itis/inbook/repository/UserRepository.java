@@ -18,12 +18,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByConfirmCode(String confirmCode);
     List<User> findAllByLoginContainsIgnoreCase(String login);
     List<User> findAll();
-
-//    @Modifying
-//    @ Query("update User u set u.email = ?1")
-//    void setUserInfoById(String email);
-//
-//    @ Modifying
-//    @ Query("update SomeEntity t set t.value = :value where t.id = :id")
-//    int updateBooksList("id" Long id, "value" List<Book> value);
 }

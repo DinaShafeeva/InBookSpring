@@ -4,6 +4,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,7 @@ public class ChatController {
         return chatMessage;
     }
 
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     @GetMapping("/chat")
     public String getChat(Authentication authentication, Model model) {
         UserDetailsImpl userDetails = (UserDetailsImpl)authentication.getPrincipal();

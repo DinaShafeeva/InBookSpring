@@ -38,7 +38,7 @@ public class Book {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<User> userList;
 
-    @OneToMany(mappedBy="book",fetch = FetchType.EAGER)
-    private List<Quote> quotes;
+//    @OneToMany(mappedBy="book",fetch = FetchType.EAGER)
+//    private List<Quote> quotes;
 
 }

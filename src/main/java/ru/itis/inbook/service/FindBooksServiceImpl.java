@@ -2,6 +2,8 @@ package ru.itis.inbook.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 import ru.itis.inbook.models.Book;
 import ru.itis.inbook.models.Genre;
 import ru.itis.inbook.repository.BookRepository;
@@ -9,6 +11,7 @@ import ru.itis.inbook.repository.BookRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+@SessionScope
 @Service
 public class FindBooksServiceImpl implements FindBooksService {
 

@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 import ru.itis.inbook.dto.SignUpDto;
 import ru.itis.inbook.models.Role;
 import ru.itis.inbook.models.User;
@@ -20,7 +21,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
 @Component
-@RequestScope
+@SessionScope
 public class SignUpServiceImpl implements SignUpService {
 
     @Autowired

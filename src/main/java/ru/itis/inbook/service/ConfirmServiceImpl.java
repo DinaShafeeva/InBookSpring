@@ -2,6 +2,7 @@ package ru.itis.inbook.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 import ru.itis.inbook.models.Role;
 import ru.itis.inbook.models.User;
@@ -10,7 +11,7 @@ import ru.itis.inbook.repository.UserRepository;
 import java.util.Optional;
 
 @Service
-@SessionScope
+@RequestScope
 public class ConfirmServiceImpl implements ConfirmService {
 
     @Autowired

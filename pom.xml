@@ -154,7 +154,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>mvc-auth-commons</artifactId>
+            <version>[1.0, 2.0)</version>
+        </dependency>
     </dependencies>
-
-
 </project>

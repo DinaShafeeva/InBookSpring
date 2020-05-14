@@ -20,7 +20,7 @@ public class Advices {
         System.out.println("Try to confirm");
     }
 
-    @Around(value= "execution(* ru.itis.inbook.service.ProfileChangeServiceImp.update(..))")
+    @After(value= "execution(* ru.itis.inbook.service.ProfileChangeServiceImp.update(..))")
     public void logUpdate(JoinPoint jp){
         System.out.println("Try to update profile data");
     }
