@@ -13,14 +13,33 @@
 
 <body>
 <div class="container">
-<form  class="form-inline my-2 ">
+<form  class="form-inline my-2" method="post" action="/searchBook">
     <div style="alignment: center">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2" name="q" id="q" type="text" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+
     </div>
 </form>
 
 <div class="my-3 p-3 bg-white container rounded shadow-sm">
+ <#if foundBook??>
+
+        <div class="media text-muted pt-3" >
+        <p id="booksSvg" > <svg class="bd-placeholder-img mr-2 rounded"  width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg></p>
+        <p id="books" class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" >
+            <strong class="d-block text-gray-dark">${foundBook.book[0].nameOfBook}</strong>
+            ${foundBook.book[0].author}
+
+        <form  action="/search" method="post">
+            <small class="d-block text-right mt-3">
+                <input  type="submit" class="btn"  style="background: chocolate" onclick="hide(${foundBook.book[0].getIdBook()})"
+                        value="Add to your list">
+                <input type="hidden" name="book_id" id ="book_id" value=${foundBook.book[0].getIdBook()}>
+            </small>
+        </form>
+        </p>
+        </div>
+ </#if>
 <#list booksList as item>
         <div id=${item.getIdBook()} class="media text-muted pt-3" >
             <p id="booksSvg" > <svg class="bd-placeholder-img mr-2 rounded"  width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg></p>

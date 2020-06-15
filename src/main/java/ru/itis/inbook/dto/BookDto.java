@@ -7,8 +7,6 @@ import ru.itis.inbook.models.User;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,7 +26,7 @@ public class BookDto {
                 .build();
     }
 
-    public List<BookDto> from(List<Book> books) {
+    static public List<BookDto> from(List<Book> books) {
         return books.stream()
                 .map(BookDto::from)
                 .collect(Collectors.toList());

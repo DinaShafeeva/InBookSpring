@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.itis.inbook.models.Role;
 import ru.itis.inbook.models.User;
 
 import java.util.List;
@@ -18,12 +19,14 @@ public class UserDto {
     private Long id;
     private String login;
     private String email;
+    private Role role;
 
     public static UserDto from(User user) {
         return UserDto.builder()
                 .id(user.getId())
                 .login(user.getLogin())
                 .email(user.getEmail())
+                .role(user.getRole())
                 .build();
     }
 

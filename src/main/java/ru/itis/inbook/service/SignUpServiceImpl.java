@@ -21,7 +21,6 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
 @Component
-@SessionScope
 public class SignUpServiceImpl implements SignUpService {
 
     @Autowired
@@ -68,17 +67,10 @@ public class SignUpServiceImpl implements SignUpService {
                 throw new IllegalArgumentException(e);
             }
 
-//        executorService.submit(() ->
-//                emailService.sendMail("Confirm", user.getConfirmCode(), user.getEmail()));
-
             return true;
         } else return false;
     }
 
-    @Override
-    public void signUpWithGoogle(String email) {
-
-    }
 
     static boolean checkPassword(String password) {
         if (password.length() > 5) {
@@ -87,11 +79,9 @@ public class SignUpServiceImpl implements SignUpService {
     }
 
     static boolean checkEmail(String email) {
-
         String string = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         return contains(string,email);
     }
-
 
     private static boolean contains(String pattern, String content) {
         return content.matches(pattern);

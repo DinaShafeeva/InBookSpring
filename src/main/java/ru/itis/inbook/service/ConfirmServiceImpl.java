@@ -11,12 +11,10 @@ import ru.itis.inbook.repository.UserRepository;
 import java.util.Optional;
 
 @Service
-@RequestScope
 public class ConfirmServiceImpl implements ConfirmService {
 
     @Autowired
     private UserRepository userRepository;
-
 
     @Override
     public boolean confirm(String confirmCode) {
@@ -28,6 +26,5 @@ public class ConfirmServiceImpl implements ConfirmService {
             return true;
         }
         return false;
-
     }
 }

@@ -12,23 +12,5 @@
  <p>${item.getEmail()}</p>
  </#list>
 
-<#--<ul>-->
-    <#--<div th:each="user : ${users}">-->
-        <#--<li th:text="'id = ' + ${user.id} +-->
-        <#--', nickname = ' + ${user.nickname} + ', role = ' + ${user.role}"></li>-->
-        <#--<form method="get" th:action="'user/' + ${user.id} + '/edit'">-->
-            <#--<input type="submit" value="Edit">-->
-        <#--</form>-->
-        <#--<form method="post" th:action="'user/' + ${user.id} + '/delete'">-->
-            <#--<input type="submit" value="Delete">-->
-        <#--</form>-->
-    <#--</div>-->
-<#--</ul>-->
-<#--<form method="get" action="/add">-->
-    <#--<input type="submit" value="Add user">-->
-<#--</form>-->
-<#--<form method="get" th:action="'/users'">-->
-    <#--<input name="filter" type="text">-->
-    <#--<input type="submit" value="Filter"></form>-->
 </body>
 </html>

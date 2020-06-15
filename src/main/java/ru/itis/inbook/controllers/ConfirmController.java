@@ -16,7 +16,6 @@ public class ConfirmController {
     @GetMapping("/confirm/{confirm-code}")
     public String confirm(@PathVariable("confirm-code") String confirmCode,
                           Model model) {
-        System.out.println(" я тут ");
         boolean isConfirmed = confirmService.confirm(confirmCode);
         model.addAttribute("isConfirmed", isConfirmed);
         return "redirect:/signIn";

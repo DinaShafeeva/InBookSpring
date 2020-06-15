@@ -9,7 +9,6 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 @Service
-@Scope("MyScope")
 public class EmailServiceImpl implements EmailService {
 
     @Autowired

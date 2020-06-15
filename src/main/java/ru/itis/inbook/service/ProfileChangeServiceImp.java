@@ -36,15 +36,6 @@ public class ProfileChangeServiceImp implements ProfileChangeService {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
-
-//        User oldUser = userRepository.findById(12);
-//        userRepository.delete(oldUser);
-//        if (user.getLogin() != null)  oldUser.setLogin(user.getLogin());
-//        if ((user.getEmail() != null) && SignUpServiceImpl.checkEmail(user.getEmail())) oldUser.setEmail(user.getEmail());
-//        if (user.getHashPassword() != null) oldUser.setHashPassword(user.getHashPassword());
-//        userRepository.save(oldUser);
-
-
-
+        userRepository.save(user);
     }
 }

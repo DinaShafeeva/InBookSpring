@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link href="signin.css" rel="stylesheet">
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
 
 </head>
 <body style="background: antiquewhite">
@@ -25,6 +26,7 @@
         <p id="textLetters" style="color: red" hidden >Password should have letters</p>
         <p><input type="submit" class="btn btn-lg btn-primary btn-block"  style="background: chocolate"  value="Register"></p>
         <a class="mb-3" href="/signIn">Already have an account?</a>
+
         <p class="mt-5 mb-3 text-muted">© 2020</p>
     </form>
 </div>

@@ -38,7 +38,7 @@
         <label for="inputPassword" class="sr-only ">Password</label>
         <p><input type="password" name="password" class="form-control" placeholder="Password" required></p>
         <p><input class="btn btn-lg btn-primary btn-block"  style="background: chocolate" type="submit" value="Sign in"></p>
-        <a class="mb-3" href="/signUp">Need to sign up?</a>
+        <p><a class="mb-3" href="/signUp">Need to sign up?</a></p>
 
         <p class="mt-5 mb-3 text-muted">© 2020</p>
     </form>

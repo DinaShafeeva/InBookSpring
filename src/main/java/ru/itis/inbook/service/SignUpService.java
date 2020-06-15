@@ -4,5 +4,4 @@ import ru.itis.inbook.dto.SignUpDto;
 
 public interface SignUpService {
     boolean signUp(SignUpDto form);
-    void signUpWithGoogle(String email);
 }

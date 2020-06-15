@@ -69,51 +69,11 @@
     </div>
 
 
-    <#--<div class="my-3 p-3 bg-white rounded shadow-sm">-->
-        <#--<h6 class="border-bottom border-gray pb-2 mb-0">Favorite quotes:</h6>-->
-        <#--<div class="media text-muted pt-3">-->
-            <#--<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>-->
-            <#--<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">-->
-                <#--<strong class="d-block text-gray-dark">${user.getQuotes()[0].quoteText}</strong>-->
-            <#--${user.getQuotes()[0].book.nameOfBook}-->
-            <#--</p>-->
-        <#--</div>-->
-        <#--<div class="media text-muted pt-3">-->
-            <#--<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>-->
-            <#--<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">-->
-                <#--<strong class="d-block text-gray-dark">${user.getQuotes()[1].quoteText}</strong>-->
-            <#--${user.getQuotes()[1].book.nameOfBook}-->
-            <#--</p>-->
-        <#--</div>-->
-        <#--<div class="media text-muted pt-3">-->
-            <#--<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg>-->
-            <#--<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">-->
-                <#--<strong class="d-block text-gray-dark">${user.getQuotes()[2].quoteText}</strong>-->
-            <#--${user.getQuotes()[2].book.nameOfBook}-->
-            <#--</p>-->
-        <#--</div>-->
-        <#--<div id="div2" style="display: none">-->
-        <#--<#list user.getQuotes()[3 ..< user.getQuotes()?size ] as item>-->
-            <#--<div class="media text-muted pt-3" id="booksDiv" >-->
-                <#--<p id="booksSvg" > <svg class="bd-placeholder-img mr-2 rounded"  width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#d69c4b"></rect></svg></p>-->
-                <#--<p id="books" class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" >-->
-                    <#--<strong class="d-block text-gray-dark">  ${item.quoteText}</strong>-->
-                    <#--${item.book.nameOfBook}-->
-                <#--</p>-->
-            <#--</div>-->
-        <#--</#list>-->
-        <#--</div>-->
-        <#--<small class="d-block text-right mt-3">-->
-            <#--<p><input type="submit" class="btn"  style="background: chocolate"-->
-                      <#--onclick="moreQuotes()" value="More..."></p>-->
-        <#--</small>-->
-    <#--</div>-->
-    <#--</div>-->
 
 
-    <form action="/profile" method="post">
-        <p><input class="btn btn-lg btn-primary btn-block"  style="background: chocolate" type="submit" value="Change profile"></p>
-    </form>
+    <#--<form action="/profile" method="post">-->
+        <#--<p><input class="btn btn-lg btn-primary btn-block"  style="background: chocolate" type="submit" value="Change profile"></p>-->
+    <#--</form>-->
 
 
 <script>

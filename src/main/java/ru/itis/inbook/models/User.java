@@ -34,9 +34,6 @@ public class User {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Book> bookList;
-//
-//    @OneToMany(mappedBy="user")
-//    private List<Quote> quotes;
 
     private String confirmCode;
 
